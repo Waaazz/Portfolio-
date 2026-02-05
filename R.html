@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet R – Analyse Google Play Store</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f4f6fb;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #0072ff, #0072ff);
+      color: white;
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; opacity: 0.9; }
+    main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+    section {
+      background: white;
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    section h2 { color: #0072ff; margin-bottom: 1rem; }
+    ul { margin-left: 1.2rem; }
+    .timeline { position: relative; margin: 2rem 0; padding-left: 30px; border-left: 3px solid #0072ff; }
+    .timeline-item { margin-bottom: 1.5rem; }
+    .timeline-item h3 { margin: 0; font-size: 1.2rem; color: #00c6ff; }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      background: #0072ff;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #0056b3; }
+    footer { text-align: center; margin: 2rem 0; }
+    footer a { text-decoration: none; color: #6610f2; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Projet R : Analyse Exploratoire et Clustering</h1>
+    <p>Étude des applications du Google Play Store</p>
+  </header>
+
+  <main>
+    <!-- Introduction -->
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Ce projet avait pour objectif d’explorer et d’analyser les données d’applications
+        du <b>Google Play Store</b> afin de comprendre les facteurs influençant le
+        <b>caractère payant ou gratuit</b> des applications.
+      </p>
+    </section>
+
+    <!-- Contexte et problématique -->
+    <section>
+      <h2>Problématique</h2>
+      <p>
+        <b>Quels sont les facteurs qui expliquent qu’une application soit payante ou non ?</b><br>
+        L’enjeu est d’identifier les variables clés qui influencent la monétisation :
+        catégorie, notes, nombre d’installations, avis, classification de contenu…
+      </p>
+    </section>
+
+    <!-- Timeline -->
+    <section>
+      <h2>Étapes du projet</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>1. Préparation et nettoyage</h3>
+          <p>
+            - Correction d’importation des colonnes<br>
+            - Conversion des variables en numérique/facteur<br>
+            - Nettoyage des prix, installations et tailles
+          </p>
+        </div>
+        <div class="timeline-item">
+          <h3>2. Analyse descriptive</h3>
+          <p>
+            - Distribution des notes, catégories, prix et installs<br>
+            - Graphiques comparant applis gratuites vs payantes<br>
+            - Utilisation d’échelle logarithmique pour les Reviews
+          </p>
+        </div>
+        <div class="timeline-item">
+          <h3>3. Analyse Factorielle (ACM)</h3>
+          <p>
+            - Transformation de variables continues en catégories<br>
+            - Mise en évidence de dimensions : 
+              <i>Apps adultes/payantes</i> vs <i>Apps jeunes/gratuites</i><br>
+            - Identification des catégories influentes (Dating, Social, Jeux…)
+          </p>
+        </div>
+        <div class="timeline-item">
+          <h3>4. Clustering (K-means)</h3>
+          <p>
+            - Détermination du nombre optimal de clusters (méthode du coude)<br>
+            - Segmentation en 3 groupes : Gratuit, Payant, Freemium<br>
+            - Visualisation des clusters et centroïdes
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Résultats -->
+    <section>
+      <h2>Résultats</h2>
+      <p>
+        ✅ Les applications gratuites attirent plus d’installations et d’avis, mais sont plus variables.<br>
+        ✅ Les applications payantes sont souvent spécialisées (Business, Médical, Comics).<br>
+        ✅ Les applis orientées jeunes (Jeux, Social) tendent à être gratuites.<br>
+        ✅ Le clustering a permis de distinguer 3 profils clairs (Gratuit, Payant, Hybride).
+      </p>
+    </section>
+
+    <!-- Lien projet -->
+    <section style="text-align: center;">
+      <h2>Consulter le projet</h2>
+      <p>
+       <a href="https://github.com/Waaazz/Projet-R-Analyse-Exploratoire-et-Clustering-tude-des-applications-du-Google-Play-Store.git" target="_blank" class="btn">
+        🚀 Voir le projet complet
+      </a>
+      </p>
+    </section>
+
+    <div class="resumebtn" style="text-align: center;">
+            <a href="assets/images/Rapport_R.docx" target="_blank" class="btn"><span>RAPPORT DU PROJET FORMAT DOCX</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+    </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="index.html">⬅ Retour au portfolio</a>
+  </footer>
+
+</body>
+</html>

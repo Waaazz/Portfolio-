@@ -39,20 +39,20 @@ $(document).ready(function () {
 
     // <!-- emailjs to mail contact form data -->
     $("#contact-form").submit(function (event) {
-        emailjs.init("y8dv0W509O0JY1NuD");
+        emailjs.init("JseNAPwgcJNnoFf67");
 
-        emailjs.sendForm('service_4hmsyfu', 'template_4vem5el', '#contact-form')
+        emailjs.sendForm('service_wtoxho6', 'template_odcp4sl', '#contact-form')
             .then(function (response) {
                 console.log('SUCCESS!', response.status, response.text);
                 document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
+                alert("Message envoyé avec succès !");
             }, function (error) {
                 console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
+                alert("Échec de l'envoi. Réessayez !");
             });
         event.preventDefault();
     });
-    
+
     // <!-- emailjs to mail contact form data -->
 
 });
@@ -68,6 +68,19 @@ document.addEventListener('visibilitychange',
             $("#favicon").attr("href", "assets/images/favhand.png");
         }
     });
+
+    document.querySelectorAll('.voir-plus-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const details = button.nextElementSibling;
+            if (details.style.display === "block") {
+            details.style.display = "none";
+            button.textContent = "Voir plus";
+            } else {
+            details.style.display = "block";
+            button.textContent = "Voir moins";
+            }
+        });
+        });
 
 
 // <!-- typed js effect starts -->
@@ -240,3 +253,29 @@ srtop.reveal('.experience .timeline .container', { interval: 400 });
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
+
+
+
+// Loader
+function loader() {
+  document.querySelector(".loader-container").classList.add("fade-out");
+}
+function fadeOut() {
+  setInterval(loader, 1500);
+}
+window.onload = fadeOut;
+
+// Menu toggle (mobile)
+let menu = document.querySelector("#menu");
+let navbar = document.querySelector(".navbar");
+
+menu.onclick = () => {
+  menu.classList.toggle("fa-times");
+  navbar.classList.toggle("nav-toggle");
+};
+
+window.onscroll = () => {
+  menu.classList.remove("fa-times");
+  navbar.classList.remove("nav-toggle");
+};
+
